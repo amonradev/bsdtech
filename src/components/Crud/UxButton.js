@@ -10,8 +10,11 @@ export const UxButton = ({func, nome}) => {
             <TouchableOpacity
             onPress={func}
             style={style.ButtonUx}
-            title={nome}
-            />
+            >
+                <Text style={style.TextUx}>
+                    {nome}
+                </Text>
+            </TouchableOpacity>
         </>
     )
 }

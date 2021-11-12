@@ -8,6 +8,9 @@ export const style = StyleSheet.create({
     MasterBox: {
         backgroundColor: "#1a202c"
     },
+    Imagem: {
+        height: 200
+    },
     input: {
         width: "80%",
         borderRadius: 10,
@@ -15,6 +18,7 @@ export const style = StyleSheet.create({
         backgroundColor: "#f6f6f6",
         height: 45,
         margin: 6,
+        marginTop: 15,
         borderWidth: 1,
         paddingLeft: 10,
     },

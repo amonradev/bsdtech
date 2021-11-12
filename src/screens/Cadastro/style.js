@@ -5,10 +5,23 @@ export const style = StyleSheet.create({
         alignItems: "center",
         marginTop: "18%",
         flex: 1,
-        justifyContent: "center"
+        justifyContent: "center",
     },
     MasterBox: {
         backgroundColor: "#1a202c"
+    },
+    Button: {
+        backgroundColor: "#273d96",
+        borderRadius: 10,
+        width: "80%",
+        height: 45,
+        marginTop: 20
+    },
+    TextButton: {
+        color: "#fff",
+        textAlign: "center",
+        fontSize: 16,
+        padding: 10
     },
     input: {
         width: "80%",
@@ -17,6 +30,7 @@ export const style = StyleSheet.create({
         backgroundColor: "#f6f6f6",
         height: 45,
         margin: 6,
+        marginTop: 15,
         borderWidth: 1,
         paddingLeft: 10,
     },
