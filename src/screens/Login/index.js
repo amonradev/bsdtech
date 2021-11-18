@@ -1,5 +1,5 @@
 import React from "react"
-import { View, Text, ScrollView, TextInput, Image } from 'react-native'
+import { View, Text, ScrollView, TextInput, Image, StatusBar } from 'react-native'
 import { style } from "./style"
 import { ButtonSubmit } from "../../components/Crud/ButtonSubmit";
 import { useForm, Controller } from "react-hook-form";
@@ -11,6 +11,7 @@ export const Login = ({navigation}) =>{
 
     return (
         <ScrollView style={style.MasterBox}>
+            <StatusBar backgroundColor="#1a202c" />
             <View style={style.Box}>
               <Image source={require('../../img/logoBsd.png')} style={style.Imagem} />
                 <Controller
@@ -54,7 +55,7 @@ export const Login = ({navigation}) =>{
                 />
                 {errors.senha && <Text style={style.TextError}>* Este campo é obrigatório</Text>}
                 <UxButton nome="Esqueceu sua senha?" estilo="marginTop: 0, textAlign: 'left' " />
-                <ButtonSubmit nome="Fazer login" />
+                <ButtonSubmit nome="Fazer login" func={() => navigation.navigate("Main")} />
                 <UxButton nome="Ainda não é cadastrado? Cadastre-se agora" />
             </View>
         </ScrollView>

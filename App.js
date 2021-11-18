@@ -14,7 +14,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <UsuariosProvider>
-        <Stack.Navigator initialRouteName="Main"  screenOptions={{
+        <Stack.Navigator initialRouteName="Login"  screenOptions={{
         headerShown: false}}>
           <Stack.Screen name="Cadastro" component={Cadastro} />
           <Stack.Screen name="Login" component={Login} />
