@@ -4,13 +4,13 @@ import { style } from "./style"
 import { ButtonSubmit } from "../../components/Crud/ButtonSubmit";
 import { useForm, Controller } from "react-hook-form";
 import { UxButton } from "../../components/Crud/UxButton";
-
+import { Scroll } from "../../components/Scroll";
 export const Login = ({navigation}) =>{
 
     const { control, handleSubmit, formState: { errors } } = useForm()
 
     return (
-        <ScrollView style={style.MasterBox}>
+        <Scroll>
             <StatusBar backgroundColor="#1a202c" />
             <View style={style.Box}>
               <Image source={require('../../img/logoBsd.png')} style={style.Imagem} />
@@ -58,7 +58,7 @@ export const Login = ({navigation}) =>{
                 <ButtonSubmit nome="Fazer login" func={() => navigation.navigate("Main")} />
                 <UxButton nome="Ainda não é cadastrado? Cadastre-se agora" />
             </View>
-        </ScrollView>
+        </Scroll>
 
     )
 }

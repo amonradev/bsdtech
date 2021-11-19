@@ -2,15 +2,7 @@ import { StyleSheet } from "react-native"
 
 export const style = StyleSheet.create({
     MasterBox: {
-            backgroundColor: "#1a202c"
-    },
-    Imagem: {
-        height: 800,
-        width: "120%",
-        marginLeft: 75,
-    },
-    PerfilBox: {
-        
+        backgroundColor: "#1a202c"
     },
     ImagemPerfil: {
         height: 150,
@@ -18,20 +10,8 @@ export const style = StyleSheet.create({
         right: 215,
         borderRadius: 8
     },
-    TextoUsuario: {
-        fontWeight: "bold",
-        fontSize: 28,
-        color: "#fff",
-        textAlign: "center",
-        marginTop: -120,
-        marginLeft: -90
+    MainContainer: {
+        marginTop: 100,
+        marginLeft: -85
     },
-    Nome: {
-        fontWeight: "bold",
-        fontSize: 28,
-        color: "#fff",
-        textAlign: "center",
-        marginTop: 0,
-        marginLeft: -108
-    }
 })

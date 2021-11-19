@@ -1,9 +1,10 @@
 import React, { useState } from "react"
-import { View, Text, ScrollView, TextInput, StatusBar, TouchableOpacity } from 'react-native'
+import { View, Text, ScrollView, TextInput, TouchableOpacity } from 'react-native'
 import { style } from "./style"
 import { ButtonSubmit } from '../../components/Crud/ButtonSubmit'
 import { useForm, Controller } from "react-hook-form";
 import { UxButton } from "../../components/Crud/UxButton";
+import { Scroll } from '../../components/Scroll'
 
 export const Cadastro = ({ navigation }) => {
 
@@ -13,7 +14,7 @@ export const Cadastro = ({ navigation }) => {
     console.log(data)
   }
   return (
-    <ScrollView style={style.MasterBox}>
+    <Scroll>
       <StatusBar backgroundColor="#1a202c" />
       <View style={style.Box}>
         <Text style={style.Titulo}>Cadastre-se</Text>
@@ -107,7 +108,7 @@ export const Cadastro = ({ navigation }) => {
         </TouchableOpacity>
         <UxButton nome="Já tem uma conta? Faça login" />
       </View>
-    </ScrollView>
+    </Scroll>
 
   )
 }

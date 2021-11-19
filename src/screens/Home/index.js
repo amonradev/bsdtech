@@ -1,26 +1,24 @@
 import React from "react"
-import { View, Text, ImageBackground, ScrollView, Image } from 'react-native'
+import { View, Image, ScrollView } from 'react-native'
 import { style } from "./style"
+import { BackgroundImage } from "../../components/Main/BackgroundImg"
+import { Scroll } from '../../components/Scroll'
+import { TextoPerfil } from "../../components/Main/TextoPerfil"
+import { ContainerButtons } from "../../components/Main/ContainerButtons"
 
-export const Home = () => {
+export const Home = ({navigation}) => {
     const nomeUsuario = "Fernando"
     return (
-        <ScrollView style={style.MasterBox}>
-            {/* Acho que isso tambem pode ser um componente */}
-            <ImageBackground source={require('../../img/background.png')} 
-                            imageStyle={{opacity:0.15}} 
-                            style={style.Imagem}>
-                        <View style={style.PerfilBox}>
+        <ScrollView style={{backgroundColor: "#1a202c"}}>
+            <BackgroundImage>
+                        <View>
                             <Image source={require('../../img/perfil.png')} style={style.ImagemPerfil} resizeMode="contain" />
-                            {/* Criar um componente pra isso aqui em baixo */}
-                            <Text style={style.TextoUsuario}>
-                                Bem Vindo, 
-                            </Text>
-                            <Text style={style.Nome}>
-                                {nomeUsuario}!
-                            </Text>
+                            <TextoPerfil nomeUsuario={nomeUsuario} />
                         </View>
-            </ImageBackground>
+                        <View style={style.MainContainer}>
+                            <ContainerButtons navigation={navigation} />
+                        </View>
+            </BackgroundImage>
         </ScrollView>
     )
 }

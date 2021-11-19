@@ -7,9 +7,6 @@ export const style = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
     },
-    MasterBox: {
-        backgroundColor: "#1a202c"
-    },
     Button: {
         backgroundColor: "#273d96",
         borderRadius: 10,
