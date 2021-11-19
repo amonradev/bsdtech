@@ -9,7 +9,7 @@ import { ContainerButtons } from "../../components/Main/ContainerButtons"
 export const Home = ({navigation}) => {
     const nomeUsuario = "Fernando"
     return (
-        <ScrollView style={{backgroundColor: "#1a202c"}}>
+        <Scroll>
             <BackgroundImage>
                         <View>
                             <Image source={require('../../img/perfil.png')} style={style.ImagemPerfil} resizeMode="contain" />
@@ -19,6 +19,6 @@ export const Home = ({navigation}) => {
                             <ContainerButtons navigation={navigation} />
                         </View>
             </BackgroundImage>
-        </ScrollView>
+        </Scroll>
     )
 }
