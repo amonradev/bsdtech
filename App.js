@@ -10,12 +10,29 @@ const Stack = createStackNavigator()
 
 
 export default function App() {
-
+  const navigatorOptions = {
+    headerShown: false,
+    cardStyle: { backgroundColor: 'transparent' },
+    cardStyleInterpolator: ({ current: { progress } }) => ({
+      cardStyle: {
+        opacity: progress.interpolate({
+          inputRange: [0, 1],
+          outputRange: [0, 1],
+        }),
+      },
+      overlayStyle: {
+        opacity: progress.interpolate({
+          inputRange: [0, 1],
+          outputRange: [0, 0.5],
+          extrapolate: 'clamp',
+        }),
+      },
+    }),
+  }
   return (
     <NavigationContainer>
       <UsuariosProvider>
-        <Stack.Navigator initialRouteName="Login"  screenOptions={{
-        headerShown: false}}>
+        <Stack.Navigator initialRouteName="Login"  screenOptions={navigatorOptions}>
           <Stack.Screen name="Cadastro" component={Cadastro} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Main" component={Main} />
