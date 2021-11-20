@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
-import { Cadastro } from './src/screens/Cadastro';
+import { Register } from './src/screens/Register';
 import { Login } from './src/screens/Login';
 import { UsuariosProvider } from './src/context/UsuariosContext'
 import { Main } from './routes';
@@ -32,8 +32,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <UsuariosProvider>
-        <Stack.Navigator initialRouteName="Login"  screenOptions={navigatorOptions}>
-          <Stack.Screen name="Cadastro" component={Cadastro} />
+        <Stack.Navigator initialRouteName="Login" screenOptions={navigatorOptions}>
+          <Stack.Screen name="Register" component={Register} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Main" component={Main} />
         </Stack.Navigator>

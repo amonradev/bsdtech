@@ -6,7 +6,7 @@ import { useForm, Controller } from "react-hook-form";
 import { UxButton } from "../../components/Crud/UxButton";
 import { Scroll } from '../../components/Scroll'
 
-export const Cadastro = ({ navigation }) => {
+export const Register = ({ navigation }) => {
 
   const { control, handleSubmit, formState: { errors } } = useForm()
 
