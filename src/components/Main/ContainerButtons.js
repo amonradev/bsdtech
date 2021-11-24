@@ -8,12 +8,12 @@ export const ContainerButtons = ({navigation}) => {
     return (
         <>
             <View style={style.ContainerCima}>
-                <ButtonMain nameIcon="reader-outline" nomeBotao="  ODS" func={() => navigation.navigate('Login')} />
-                <ButtonMain nameIcon="calendar-outline" nomeBotao="  Histórico" />
+                <ButtonMain nameIcon="reader-outline" nomeBotao="  ODS" onPress={() => navigation.navigate('Ods')} />
+                <ButtonMain nameIcon="calendar-outline" nomeBotao="  Histórico" onPress={() => navigation.navigate('History')} />
             </View>
             <View style={style.ContainerBaixo}>
-                <ButtonMain nameIcon="logo-youtube" nomeBotao=" Tutorial" />
-                <ButtonMain nameIcon="ribbon-outline" nomeBotao="  Garantia" />
+                <ButtonMain nameIcon="logo-youtube" nomeBotao=" Tutorial" onPress={() => navigation.navigate('Tutorial')} />
+                <ButtonMain nameIcon="ribbon-outline" nomeBotao="  Garantia" onPress={() => navigation.navigate('Warranty')}/>
             </View>
             <View style={style.Maps}>
                 <Text>
