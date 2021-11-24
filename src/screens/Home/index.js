@@ -1,10 +1,11 @@
 import React from "react"
-import { View, Image, ScrollView } from 'react-native'
+import { View, Image, ScrollView, Button } from 'react-native'
 import { style } from "./style"
 import { BackgroundImage } from "../../components/Main/BackgroundImg"
 import { Scroll } from '../../components/Scroll'
 import { TextoPerfil } from "../../components/Main/TextoPerfil"
 import { ContainerButtons } from "../../components/Main/ContainerButtons"
+import axios from "axios"
 
 export const Home = ({navigation}) => {
     const nomeUsuario = "Fernando"

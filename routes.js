@@ -1,5 +1,6 @@
 import React from "react"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+import { createStackNavigator } from '@react-navigation/stack'
 import { Home } from "./src/screens/Home"
 import Icon from 'react-native-vector-icons/Ionicons'
 import LinearGradient from 'react-native-linear-gradient'
@@ -8,6 +9,25 @@ import { Settings } from "./src/screens/Settings"
 import { Profile } from "./src/screens/Profile"
 import { Contact } from "./src/screens/Contact/Index"
 import { Notifications } from "./src/screens/Notifications"
+import { Warranty } from "./src/screens/Home/HomeScreens/Warranty"
+import { Tutorial } from "./src/screens/Home/HomeScreens/Tutorial"
+import { Ods } from "./src/screens/Home/HomeScreens/Ods"
+import { History } from "./src/screens/Home/HomeScreens/History"
+
+const Stack = createStackNavigator()
+
+const MainPages = () => {
+
+    return(
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+            <Stack.Screen name="MainPages" component={Home} />
+            <Stack.Screen name="Warranty" component={Warranty} />
+            <Stack.Screen name="Tutorial" component={Tutorial} />
+            <Stack.Screen name="Ods" component={Ods} />
+            <Stack.Screen name="History" component={History} />
+        </Stack.Navigator>
+    )
+}
 const Tabs = createBottomTabNavigator()
 
 Icon.loadFont();
@@ -54,7 +74,7 @@ export const Main = () => {
             <Tabs.Screen name="Contact" component={Contact} />
             <Tabs.Screen
                 name="Home"
-                component={Home}
+                component={MainPages}
                 options={() => ({
                     tabBarIcon: ({ tintColor }) => (
                         <View>
@@ -70,12 +90,12 @@ export const Main = () => {
     )
 }
 const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center'
-	},
-	iconTabRound: {
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    iconTabRound: {
         width: 60,
         height: 60,
         borderRadius: 30,
