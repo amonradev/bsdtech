@@ -38,7 +38,7 @@ export const Ods = ({navigation}) => {
                         </Text>
                         </TouchableOpacity>
                     </View>
-                    {/*Adicionar lottie de loading enquanto espera a requisição*/}
+                    {/*Adicionar lottie ou imagem de loading enquanto espera a requisição*/}
                     {flag != 1 ? <View><Text>Carregando</Text></View> :
                         <>
                             {data.length >= 1 ? <OdsList object={data[0]} /> : <></>}
