@@ -11,22 +11,23 @@ export const OdsList = ({ object }) => {
                 fontSize: 27
             }}
                 text={object.produto} />
-                <View style={style.DescContainer}>
-            <CardText style={{
-                color: "#fff",
-                fontSize: 15
-            }}
-                text={object.descricao} />
+            <View style={style.DescContainer}>
+                <CardText style={{
+                    color: "#fff",
+                    fontSize: 15
+                }}
+                    text={object.descricao} />
 
-                </View>
+            </View>
             <View style={style.TextContainer}>
-            <CardText style={{
-                color: "#fff",
-                fontSize: 17
-            }}
-                money="R$ "
-                text={object.valor_total} />
-            <CardText style={{color: "#fff", fontSize: 17}} text={object.data_saida} />
+                <CardText style={{
+                    color: "#fff",
+                    fontSize: 17
+                }}
+                    money="R$ "
+                    text={object.valor_total} />
+                <CardText style={{ color: "#fff", fontSize: 17 }}
+                    text={object.data_saida} />
             </View>
         </View>
     )

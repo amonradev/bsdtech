@@ -30,14 +30,15 @@ export const Ods = ({navigation}) => {
         <SafeAreaView>
             <ScrollView style={{ backgroundColor: "#1a202c", }}>
                 <View>
-                    <View>
-                        <TouchableOpacity onPress={() => navigation.navigate("MainPages")}>
+                    <View style={style.TopContainer}>
+                        <TouchableOpacity style={style.ButtonContainer} onPress={() => navigation.navigate("MainPages")}>
                             <Icon name="chevron-back-outline" size={24} color={'#fff'} />
-                        </TouchableOpacity>
-                        <Text>
-                            Ordens de Serviço mais Recentes
+                        <Text style={style.TextTop}>
+                            Ordem de Serviço
                         </Text>
+                        </TouchableOpacity>
                     </View>
+                    {/*Adicionar lottier de loading enquanto espera a requisição*/}
                     {flag != 1 ? <View><Text>Carregando</Text></View> :
                         <>
                             {data.length >= 1 ? <OdsList object={data[0]} /> : <></>}
