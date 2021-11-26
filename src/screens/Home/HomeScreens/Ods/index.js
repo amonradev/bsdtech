@@ -4,6 +4,7 @@ import { View, Text, TouchableOpacity, SafeAreaView, ScrollView } from 'react-na
 import { OdsList } from "../../../../components/HomeScreensComponents/OdsList"
 import { style } from './style'
 import Icon from 'react-native-vector-icons/Ionicons'
+import LottieView from 'lottie-react-native'
 
 Icon.loadFont();
 
@@ -39,7 +40,7 @@ export const Ods = ({navigation}) => {
                         </TouchableOpacity>
                     </View>
                     {/*Adicionar lottie ou imagem de loading enquanto espera a requisição*/}
-                    {flag != 1 ? <View><Text>Carregando</Text></View> :
+                    {flag != 1 ? <View style={style.LottieContainer}><LottieView source={require('../../../../img/lottie.json')} autoPlay loop style={style.Lottie} /></View> :
                         <>
                             {data.length >= 1 ? <OdsList object={data[0]} /> : <></>}
                             {data.length >= 2 ? <OdsList object={data[1]} /> : <></>}

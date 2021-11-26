@@ -11,5 +11,12 @@ export const style = StyleSheet.create({
     },
     ButtonContainer: {
         flexDirection: "row"
+    },
+    LottieContainer: {
+        alignItems: "center",
+        marginTop: 160
+    },
+    Lottie: {
+        width: 300
     }
 })
