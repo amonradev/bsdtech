@@ -1,15 +1,17 @@
 import axios from "axios"
 import React, { useState, useEffect } from "react"
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native'
 import { OdsList } from "../../../../components/HomeScreensComponents/OdsList"
-import { BackgroundImage } from "../../../../components/Main/BackgroundImg"
-import { Scroll } from "../../../../components/Scroll"
+import { style } from './style'
+import Icon from 'react-native-vector-icons/Ionicons'
 
-export const Ods = () => {
+Icon.loadFont();
+
+export const Ods = ({navigation}) => {
     const [data, setData] = useState([])
     useEffect(() => {
-                async function fetchData() {
-                axios({
+        function fetchData() {
+            axios({
                 url: "https://node-amarrado.herokuapp.com/services",
                 method: "GET"
             }).then((res) => {
@@ -21,27 +23,39 @@ export const Ods = () => {
         fetchData()
 
     }, [''])
-    if(data.length >= 1){
+    if (data.length >= 1) {
         var flag = 1
     }
     return (
-        <Scroll>
-            <BackgroundImage>
+        <SafeAreaView>
+            <ScrollView style={{ backgroundColor: "#1a202c", }}>
                 <View>
-                    <Text>
-                        Suas três últimas ordens de serviço
-                    </Text>
-                    {flag != 1 ? <View><Text>Carregando</Text></View> :
                     <View>
-                        <OdsList object={data[0]} />
-                        <OdsList object={data[1]} />
-                        <OdsList object={data[2]} />
-                    </View>}
+                        <TouchableOpacity onPress={() => navigation.navigate("MainPages")}>
+                            <Icon name="chevron-back-outline" size={24} color={'#fff'} />
+                        </TouchableOpacity>
+                        <Text>
+                            Ordens de Serviço mais Recentes
+                        </Text>
+                    </View>
+                    {flag != 1 ? <View><Text>Carregando</Text></View> :
+                        <>
+                            {data.length >= 1 ? <OdsList object={data[0]} /> : <></>}
+                            {data.length >= 2 ? <OdsList object={data[1]} /> : <></>}
+                            {data.length >= 3 ? <OdsList object={data[2]} /> : <></>}
+                            {data.length >= 4 ? <OdsList object={data[3]} /> : <></>}
+                            {data.length >= 5 ? <OdsList object={data[4]} /> : <></>}
+                            {data.length >= 6 ? <OdsList object={data[5]} /> : <></>}
+                            {data.length >= 7 ? <OdsList object={data[6]} /> : <></>}
+                            {data.length >= 8 ? <OdsList object={data[7]} /> : <></>}
+                            {data.length >= 9 ? <OdsList object={data[8]} /> : <></>}
+                            {data.length >= 10 ? <OdsList object={data[9]} /> : <></>}
+                        </>}
 
                     <Text>
                     </Text>
                 </View>
-            </BackgroundImage>
-        </Scroll>
+            </ScrollView>
+        </SafeAreaView>
     )
 }
