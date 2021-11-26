@@ -1,16 +1,33 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { Text, View } from 'react-native'
 import { style } from './style'
-
+import { CardText } from './CardText'
 export const OdsList = ({ object }) => {
 
     return (
-            <View style={style.Container}>
-                <Text>{object.produto}</Text>
-                <Text>{object.descricao}</Text>
-                <Text>{object.valor_total}</Text>
-                <Text>{object.data_entrada}</Text>
-                <Text>{object.data_saida}</Text>
+        <View style={style.Container}>
+            <CardText style={{
+                color: "#fff",
+                fontSize: 27
+            }}
+                text={object.produto} />
+                <View style={style.DescContainer}>
+            <CardText style={{
+                color: "#fff",
+                fontSize: 15
+            }}
+                text={object.descricao} />
+
+                </View>
+            <View style={style.TextContainer}>
+            <CardText style={{
+                color: "#fff",
+                fontSize: 17
+            }}
+                money="R$ "
+                text={object.valor_total} />
+            <CardText style={{color: "#fff", fontSize: 17}} text={object.data_saida} />
             </View>
+        </View>
     )
 }
