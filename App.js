@@ -12,7 +12,7 @@ const Stack = createStackNavigator()
 export default function App() {
   const navigatorOptions = {
     headerShown: false,
-    cardStyle: { backgroundColor: 'transparent' },
+    cardStyle: { backgroundColor: '#1a202c' },
     cardStyleInterpolator: ({ current: { progress } }) => ({
       cardStyle: {
         opacity: progress.interpolate({
