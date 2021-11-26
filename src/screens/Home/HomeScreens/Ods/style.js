@@ -1,9 +1,15 @@
 import { StyleSheet } from "react-native"
 
 export const style = StyleSheet.create({
-    Imagem: {
-        height: 800,
-        width: "120%",
-        marginLeft: 75,
+    TextTop: {
+        color: "#fff",
+        fontSize: 18
     },
+    TopContainer: {
+        margin: 30,
+        flexDirection: "row"
+    },
+    ButtonContainer: {
+        flexDirection: "row"
+    }
 })
