@@ -1,8 +1,9 @@
-import React from 'react'
-import { ImageBackground, Text, View } from 'react-native'
-import { style } from './style'
-import { CardText } from './CardText'
-export const OdsList = ({ object }) => {
+import React from "react"
+import { ImageBackground, View } from 'react-native'
+import { CardText } from "./CardText"
+import { style } from "./style"
+
+export const HistoryList = ({ object }) => {
 
     return (
         <View style={style.Container}>
@@ -13,26 +14,30 @@ export const OdsList = ({ object }) => {
                                         resizeMode="contain">
             <CardText style={{
                 color: "#fff",
-                fontSize: 27
+                fontSize: 26
             }}
-                text={object.produto} />
+                money="Serviço Número: "
+                text={object.id_servico} />
             <View style={style.DescContainer}>
                 <CardText style={{
                     color: "#fff",
-                    fontSize: 15
+                    fontSize: 24
                 }}
-                    text={object.descricao} />
+                    text={object.produto} />
 
             </View>
             <View style={style.TextContainer}>
                 <CardText style={{
                     color: "#fff",
-                    fontSize: 17
+                    fontSize: 19
                 }}
                     money="R$ "
                     text={object.valor_total} />
-                <CardText style={{ color: "#fff", fontSize: 17 }}
-                    text={object.data_saida} />
+                <CardText style={{
+                    color: "#fff",
+                    fontSize: 19
+                }}
+                text={object.data_saida} />
             </View>
         </ImageBackground>
         </View>

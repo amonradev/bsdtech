@@ -15,7 +15,22 @@ export const style = StyleSheet.create({
         padding: 2
     },
     DescContainer: {
-        marginTop: 10,
-        marginBottom: 40,
-    }
+        marginTop: 15,
+        marginBottom: 55,
+    },
+    Imagem:{
+        height: 165,
+        display: "flex"
+    },
+    TextTop: {
+        color: "#fff",
+        fontSize: 18
+    },
+    TopContainer: {
+        margin: 30,
+        flexDirection: "row"
+    },
+    ButtonContainer: {
+        flexDirection: "row"
+    },
 })

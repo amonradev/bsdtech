@@ -5,6 +5,7 @@ import { OdsList } from "../../../../components/HomeScreensComponents/OdsList"
 import { style } from './style'
 import Icon from 'react-native-vector-icons/Ionicons'
 import LottieView from 'lottie-react-native'
+import { BackTop } from "../../../../components/HomeScreensComponents/BackTop"
 
 Icon.loadFont();
 
@@ -30,16 +31,7 @@ export const Ods = ({navigation}) => {
     return (
         <SafeAreaView>
             <ScrollView style={{ backgroundColor: "#1a202c", }}>
-                <View>
-                    <View style={style.TopContainer}>
-                        <TouchableOpacity style={style.ButtonContainer} onPress={() => navigation.navigate("MainPages")}>
-                            <Icon name="chevron-back-outline" size={24} color={'#fff'} />
-                        <Text style={style.TextTop}>
-                            Ordem de Serviço
-                        </Text>
-                        </TouchableOpacity>
-                    </View>
-                    {/*Adicionar lottie ou imagem de loading enquanto espera a requisição*/}
+            <BackTop page="Ordem de Serviço" navigation={navigation} />
                     {flag != 1 ? <View style={style.LottieContainer}><LottieView source={require('../../../../img/lottie.json')} autoPlay loop style={style.Lottie} /></View> :
                         <>
                             {data.length >= 1 ? <OdsList object={data[0]} /> : <></>}
@@ -56,7 +48,6 @@ export const Ods = ({navigation}) => {
 
                     <Text>
                     </Text>
-                </View>
             </ScrollView>
         </SafeAreaView>
     )
