@@ -1,13 +1,11 @@
 import axios from "axios"
 import React, { useState, useEffect } from "react"
-import { View, Text, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native'
+import { View, SafeAreaView, ScrollView } from 'react-native'
 import { OdsList } from "../../../../components/HomeScreensComponents/OdsList"
 import { style } from './style'
-import Icon from 'react-native-vector-icons/Ionicons'
 import LottieView from 'lottie-react-native'
 import { BackTop } from "../../../../components/HomeScreensComponents/BackTop"
 
-Icon.loadFont();
 
 export const Ods = ({navigation}) => {
     const [data, setData] = useState([])
@@ -45,9 +43,6 @@ export const Ods = ({navigation}) => {
                             {data.length >= 9 ? <OdsList object={data[8]} /> : <></>}
                             {data.length >= 10 ? <OdsList object={data[9]} /> : <></>}
                         </>}
-
-                    <Text>
-                    </Text>
             </ScrollView>
         </SafeAreaView>
     )

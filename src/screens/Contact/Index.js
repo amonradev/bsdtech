@@ -1,13 +1,7 @@
 import React from "react"
-import { View, Text } from 'react-native'
+import { View, Text, Linking } from 'react-native'
 
 export const Contact = () => {
 
-    return (
-        <View>
-            <Text>
-                Contact
-            </Text>
-        </View>
-    )
+    return Linking.openURL('http://wa.link/ntkn40')
 }
