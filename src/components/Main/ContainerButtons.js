@@ -6,7 +6,7 @@ import { style } from "./style"
 export const ContainerButtons = ({navigation}) => {
 
     return (
-        <>
+        <View style={style.ContainerTodos}>
             <View style={style.ContainerCima}>
                 <ButtonMain nameIcon="reader-outline" nomeBotao="  ODS" onPress={() => navigation.navigate('Ods')} />
                 <ButtonMain nameIcon="calendar-outline" nomeBotao="  Histórico" onPress={() => navigation.navigate('History')} />
@@ -15,11 +15,11 @@ export const ContainerButtons = ({navigation}) => {
                 <ButtonMain nameIcon="logo-youtube" nomeBotao=" Tutorial" onPress={() => navigation.navigate('Tutorial')} />
                 <ButtonMain nameIcon="ribbon-outline" nomeBotao="  Garantia" onPress={() => navigation.navigate('Warranty')}/>
             </View>
-            <View style={style.Maps}>
+            {/* <View style={style.Maps}>
                 <Text>
                     Aqui ficará o maps
                 </Text>
-            </View>
-        </>
+            </View> */}
+        </View>
     )
 }

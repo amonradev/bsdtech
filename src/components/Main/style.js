@@ -51,4 +51,20 @@ export const style = StyleSheet.create({
         height: 65,
         marginTop: 6
     },
+    Card: {
+        padding: 15,
+        backgroundColor: "#273d96",
+        width: "60%",
+        height: 130,
+        marginLeft: 30,
+        marginBottom: 30,
+        borderRadius: 20
+    },
+    CardText: {
+        fontSize: 20
+    },
+    CardTextMinor: {
+        fontSize: 17,
+        paddingTop: 25
+    }
 })
