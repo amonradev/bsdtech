@@ -1,19 +1,24 @@
 import React from "react"
-import { View, Text, ScrollView, TextInput, Image, StatusBar } from 'react-native'
+import { View, Text, ScrollView, TextInput, Image, StatusBar, TouchableOpacity, Button } from 'react-native'
 import { style } from "./style"
-import { ButtonSubmit } from "../../components/Crud/ButtonSubmit";
 import { useForm, Controller } from "react-hook-form";
 import { UxButton } from "../../components/Crud/UxButton";
 import { Scroll } from "../../components/Scroll";
-export const Login = ({navigation}) =>{
+
+
+export const Login = ({ navigation }) => {
 
     const { control, handleSubmit, formState: { errors } } = useForm()
+
+    const onSubmit = ({ data }) => {
+        console.log(data)
+    }
 
     return (
         <Scroll>
             <StatusBar backgroundColor="#1a202c" />
             <View style={style.Box}>
-              <Image source={require('../../img/logoBsd.png')} style={style.Imagem} />
+                <Image source={require('../../img/logoBsd.png')} style={style.Imagem} />
                 <Controller
                     control={control}
                     rules={{
@@ -55,7 +60,7 @@ export const Login = ({navigation}) =>{
                 />
                 {errors.senha && <Text style={style.TextError}>* Este campo é obrigatório</Text>}
                 <UxButton nome="Esqueceu sua senha?" estilo="marginTop: 0, textAlign: 'left' " />
-                <ButtonSubmit nome="Fazer login" func={() => navigation.navigate("Main")} />
+                <Button title="Submit" onPress={handleSubmit(onSubmit)} />
                 <UxButton nome="Ainda não é cadastrado? Cadastre-se agora" />
             </View>
         </Scroll>
