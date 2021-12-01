@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native"
 export const style = StyleSheet.create({
     TitleMain: {
         fontSize: 26,
-        textAlign: "center"
+        textAlign: "center",
     },
     ContainerMain: {
         margin: 20
@@ -15,7 +15,7 @@ export const style = StyleSheet.create({
     },
     Title: {
         marginTop: 35,
-        fontSize: 20
+        fontSize: 20,
     },
     Paragraph2: {
         fontSize: 17,

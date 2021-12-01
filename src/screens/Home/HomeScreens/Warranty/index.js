@@ -1,13 +1,14 @@
 import React from "react"
 import { View, Text, ScrollView } from 'react-native'
+import { BackTop } from "../../../../components/HomeScreensComponents/BackTop"
 import { style } from "./style"
 
 
-export const Warranty = () => {
+export const Warranty = ({navigation}) => {
 
     return (
         <ScrollView>
-
+            <BackTop page="Sobre nós" navigation={navigation} />
             <View style={style.ContainerMain}>
                 <Text style={style.TitleMain}>
                     Conheça a BSD Tech
