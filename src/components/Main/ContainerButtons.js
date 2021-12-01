@@ -12,8 +12,8 @@ export const ContainerButtons = ({navigation}) => {
                 <ButtonMain nameIcon="calendar-outline" nomeBotao="  Histórico" onPress={() => navigation.navigate('History')} />
             </View>
             <View style={style.ContainerBaixo}>
-                <ButtonMain nameIcon="logo-youtube" nomeBotao=" Tutorial" onPress={() => navigation.navigate('Tutorial')} />
-                <ButtonMain nameIcon="ribbon-outline" nomeBotao="  Garantia" onPress={() => navigation.navigate('Warranty')}/>
+                <ButtonMain nameIcon="logo-youtube" nomeBotao=" Tutoriais" onPress={() => navigation.navigate('Tutorial')} />
+                <ButtonMain nameIcon="business-outline" nomeBotao="  Sobre nós" onPress={() => navigation.navigate('Warranty')}/>
             </View>
             {/* <View style={style.Maps}>
                 <Text>
