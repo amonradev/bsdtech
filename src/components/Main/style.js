@@ -66,5 +66,19 @@ export const style = StyleSheet.create({
     CardTextMinor: {
         fontSize: 17,
         paddingTop: 25
+    },
+    LinkText: {
+        color: "#ffffff",
+        marginTop: 160,
+        fontSize: 14,
+    },
+    CardTutorial: {
+        padding: 15,
+        backgroundColor: "#273d96",
+        width: "80%",
+        height: 300,
+        marginLeft: 30,
+        marginBottom: 30,
+        borderRadius: 20
     }
 })
