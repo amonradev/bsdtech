@@ -2,14 +2,14 @@ import React from "react"
 import { Text, TouchableOpacity } from 'react-native'
 import { style } from "./style"
 
-export const ButtonSubmit = ({func, nome}) => {
+export const ButtonSubmit = ({nome, ...rest}) => {
 
 
     return(
         <>
             <TouchableOpacity
             style={style.Button}
-            onPress={func}
+            {...rest}
             >
                 <Text style={style.TextButton}>
                     {nome}
