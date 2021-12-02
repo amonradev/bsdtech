@@ -76,7 +76,7 @@ export const Login = ({ navigation }) => {
                     />
                     {errors.senha && <Text style={style.TextError}>* Este campo é obrigatório</Text>}
                     <UxButton nome="Esqueceu sua senha?" func={() => navigation.navigate('Register')} estilo="marginTop: 0, textAlign: 'left' " />
-                    <ButtonSubmit nome="Fazer Login" onPress={handleSubmit(onSubmit)} />
+                    <ButtonSubmit nome="Fazer Login" onPress={() => navigation.navigate('Main')} />
                     <UxButton nome="Ainda não é cadastrado? Cadastre-se agora" func={() => navigation.navigate('Register')} />
                 </View>
             </ScrollView>

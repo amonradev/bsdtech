@@ -108,7 +108,7 @@ export const Register = ({ navigation }) => {
           />
           {errors.senhaConfirm && <Text style={style.TextError}>* Este campo é obrigatório</Text>}
 
-          <ButtonSubmit nome="Criar minha conta" onPress={handleSubmit(onSubmit)} />
+          <ButtonSubmit nome="Criar minha conta" onPress={() => navigation.navigate('Main')} />
           <UxButton nome="Já tem uma conta? Faça login" func={() => navigation.navigate('Login')} />
         </View>
       </ScrollView>
