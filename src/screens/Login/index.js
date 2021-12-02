@@ -1,9 +1,8 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext } from "react"
 import { View, Text, TextInput, Image, StatusBar, TouchableOpacity, Button, ScrollView } from 'react-native'
 import { style } from "./style"
 import { useForm, Controller } from "react-hook-form";
 import { UxButton } from "../../components/Crud/UxButton";
-import { Scroll } from "../../components/Scroll";
 import { ButtonSubmit } from "../../components/Crud/ButtonSubmit";
 import { SafeAreaView } from "react-native";
 import { UsuariosContext } from "../../context/UsuariosContext";
@@ -28,8 +27,7 @@ export const Login = ({ navigation }) => {
         }).catch((error) => {
             console.log(error)
         })
-    }
-    
+    }   
 
     return (
         <SafeAreaView>
@@ -79,7 +77,7 @@ export const Login = ({ navigation }) => {
                     {errors.senha && <Text style={style.TextError}>* Este campo é obrigatório</Text>}
                     <UxButton nome="Esqueceu sua senha?" func={() => navigation.navigate('Register')} estilo="marginTop: 0, textAlign: 'left' " />
                     <ButtonSubmit nome="Fazer Login" onPress={handleSubmit(onSubmit)} />
-                    <UxButton nome="Ainda não é cadastrado? Cadastre-se agora" />
+                    <UxButton nome="Ainda não é cadastrado? Cadastre-se agora" func={() => navigation.navigate('Register')} />
                 </View>
             </ScrollView>
         </SafeAreaView>

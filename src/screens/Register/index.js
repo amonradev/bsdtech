@@ -1,17 +1,26 @@
-import React, { useState } from "react"
-import { View, Text, ScrollView, TextInput, TouchableOpacity, StatusBar, SafeAreaView } from 'react-native'
+import React from "react"
+import { View, Text, ScrollView, TextInput, StatusBar, SafeAreaView } from 'react-native'
 import { style } from "./style"
 import { ButtonSubmit } from '../../components/Crud/ButtonSubmit'
 import { useForm, Controller } from "react-hook-form";
 import { UxButton } from "../../components/Crud/UxButton";
-import { Scroll } from '../../components/Scroll'
+import axios from "axios";
 
 export const Register = ({ navigation }) => {
 
   const { control, handleSubmit, formState: { errors } } = useForm()
 
   const onSubmit = (data) => {
-    console.log(data)
+    axios({
+      url: "https://senaiuserapi.herokuapp.com/sessions",
+      method: "post",
+      data: data
+    }).then((res) => {
+      navigation.navigate("Login")
+    }).catch((error) => {
+      let erro = error
+      console.log(erro)
+    })
   }
   return (
     <SafeAreaView>
