@@ -6,8 +6,8 @@ import { UxButton } from "../../components/Crud/UxButton";
 import { ButtonSubmit } from "../../components/Crud/ButtonSubmit";
 import { SafeAreaView } from "react-native";
 import { UsuariosContext } from "../../context/UsuariosContext";
-import axios from "axios";
-
+import axios from "axios"
+import { url } from "../../utils/url";
 
 export const Login = ({ navigation }) => {
 
@@ -16,7 +16,7 @@ export const Login = ({ navigation }) => {
 
     const onSubmit = (data) => {
         axios({
-            url: "https://senaiuserapi.herokuapp.com/sessions",
+            url: `${url}/usuarios/login`,
             method: "post",
             data: data
         }).then((res) => {   

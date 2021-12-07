@@ -4,23 +4,36 @@ import { style } from "./style"
 import { ButtonSubmit } from '../../components/Crud/ButtonSubmit'
 import { useForm, Controller } from "react-hook-form";
 import { UxButton } from "../../components/Crud/UxButton";
-import axios from "axios";
+import axios from "axios"
+import { url } from '../../utils/url'
 
 export const Register = ({ navigation }) => {
 
   const { control, handleSubmit, formState: { errors } } = useForm()
 
   const onSubmit = (data) => {
-    axios({
-      url: "https://senaiuserapi.herokuapp.com/sessions",
-      method: "post",
-      data: data
-    }).then((res) => {
-      navigation.navigate("Login")
-    }).catch((error) => {
-      let erro = error
-      console.log(erro)
-    })
+    
+    if (data.senha == data.senhaConfirm) {
+      const nome = data.nome
+      const email = data.email
+      const senha = data.senha
+      const userData = {
+        nome: nome,
+        email: email,
+        senha: senha
+      }
+
+      axios({
+        url: `${url}/usuarios`,
+        method: "POST",
+        data: userData
+      }).then((res) => {
+        navigation.navigate("Login")
+      }).catch((error) => {
+        console.log(error)
+      })
+    }
+
   }
   return (
     <SafeAreaView>
@@ -108,7 +121,7 @@ export const Register = ({ navigation }) => {
           />
           {errors.senhaConfirm && <Text style={style.TextError}>* Este campo é obrigatório</Text>}
 
-          <ButtonSubmit nome="Criar minha conta" onPress={() => navigation.navigate('Main')} />
+          <ButtonSubmit nome="Criar minha conta" onPress={handleSubmit(onSubmit)} />
           <UxButton nome="Já tem uma conta? Faça login" func={() => navigation.navigate('Login')} />
         </View>
       </ScrollView>
