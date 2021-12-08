@@ -69,7 +69,7 @@ export const style = StyleSheet.create({
     },
     LinkText: {
         color: "#ffffff",
-        marginTop: 160,
+        marginTop: 50,
         fontSize: 14,
     },
     CardTutorial: {
