@@ -6,24 +6,26 @@ import { UxButton } from "../../components/Crud/UxButton";
 import { ButtonSubmit } from "../../components/Crud/ButtonSubmit";
 import { SafeAreaView } from "react-native";
 import { UsuariosContext } from "../../context/UsuariosContext";
-import axios from "axios";
-
+import axios from "axios"
+import { url } from "../../utils/url";
 
 export const Login = ({ navigation }) => {
 
     const { control, handleSubmit,  formState: { errors } } = useForm()
-    const { setFlag } = useContext(UsuariosContext)
+    const { setFlag, flag, dados, setDados } = useContext(UsuariosContext)
 
     const onSubmit = (data) => {
         axios({
-            url: "https://senaiuserapi.herokuapp.com/sessions",
+            url: `${url}/usuarios/login`,
             method: "post",
             data: data
         }).then((res) => {   
-            if(res.data.flag) {
-                setFlag(res.data)
-                navigation.navigate('Main')
-            }
+                if(res.data.flag == 1) {
+                    setFlag(1)
+                    setDados(res.data.data)
+                    navigation.navigate('Main')
+                }
+            
         }).catch((error) => {
             console.log(error)
         })
@@ -76,7 +78,7 @@ export const Login = ({ navigation }) => {
                     />
                     {errors.senha && <Text style={style.TextError}>* Este campo é obrigatório</Text>}
                     <UxButton nome="Esqueceu sua senha?" func={() => navigation.navigate('Register')} estilo="marginTop: 0, textAlign: 'left' " />
-                    <ButtonSubmit nome="Fazer Login" onPress={() => navigation.navigate('Main')} />
+                    <ButtonSubmit nome="Fazer Login" onPress={handleSubmit(onSubmit)} />
                     <UxButton nome="Ainda não é cadastrado? Cadastre-se agora" func={() => navigation.navigate('Register')} />
                 </View>
             </ScrollView>

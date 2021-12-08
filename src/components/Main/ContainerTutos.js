@@ -3,7 +3,6 @@ import { style } from "./style"
 import { Linking, Text, TouchableOpacity, View } from 'react-native'
 
 export const ContainerTutos = ({titulo, link, desc}) => {
-    console.log(link)
     return (
         <>
             <View style={style.CardTutorial}>
